@@ -1,0 +1,48 @@
+@use 'reset';
+@use 'generics';
+@use 'show';
+@use 'form';
+@use 'type_index';
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    visibility: visible;
+}
+
+button {
+    border: none;
+    padding: none;
+    background: none;
+}
+
+i {
+    font-size: 18px;
+    color: red;
+}
+
+/* alert */
+
+.alert {
+    padding: 20px;
+    background-color: rgb(232, 106, 106);
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.closebtn:hover {
+    color: black;
+}

@@ -1,0 +1,32 @@
+.form-row {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+
+    input,
+    select {
+        padding: 5px;
+        width: 50%;
+    }
+
+    .tech-checks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    textarea {
+        padding: 5px;
+
+    }
+
+    .sub-btn {
+        padding: 5px 10px;
+        border-radius: 10px;
+        width: 100px;
+        background-color: rgb(92, 229, 92);
+    }
+}

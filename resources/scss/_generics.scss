@@ -1,0 +1,24 @@
+// tabella
+table {
+    margin-top: 50px;
+    border: 1px solid green;
+
+
+    th,
+    td {
+        border: 1px solid green;
+        padding: 5px;
+    }
+
+    .action-btn {
+        display: flex;
+        gap: 5px;
+
+        .delete {
+            padding: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}
