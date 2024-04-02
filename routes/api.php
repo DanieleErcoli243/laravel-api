@@ -21,5 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/projects', function () {
     $projects = Project::all();
+    
     return response()->json(compact('projects'));
 });
