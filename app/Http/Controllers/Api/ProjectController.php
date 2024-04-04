@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::select('id', 'title', 'type_id', 'description', 'image')->with('type', 'technologies')->get();
 
         
         return response()->json($projects);
@@ -33,7 +33,7 @@ class ProjectController extends Controller
     public function show(string $project)
     {
 
-        $project = Project::findOrFail($project);
+        $project = Project::select('id', 'title', 'type_id', 'description', 'image')->with('type', 'technologies')->find($project);
 
         if(!$project) return response(null, 404);
 
