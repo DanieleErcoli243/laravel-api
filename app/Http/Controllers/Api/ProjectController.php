@@ -35,6 +35,7 @@ class ProjectController extends Controller
 
         $project = Project::select('id', 'title', 'type_id', 'description', 'image')->with('type', 'technologies')->find($project);
 
+        
         if(!$project) return response(null, 404);
 
         return response()->json($project);
