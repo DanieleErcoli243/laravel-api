@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function message()
     {
         $email = new ContactMessageMail();
-
-        return response()->json('ciao');
+        Mail::to(env('MAIL_TO_ADDRESS'))->send($email);
+        return response(null, 204);
     }
 }
