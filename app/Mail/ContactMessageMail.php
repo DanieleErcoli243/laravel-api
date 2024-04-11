@@ -13,12 +13,19 @@ class ContactMessageMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    public $sender;
+    public $subject;   
+    public $message;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($sender, $subject, $message)
     {
-        //
+        $this->sender = $sender;
+        $this->subject = $subject;
+        $this->message = $message;
     }
 
     /**
@@ -27,7 +34,8 @@ class ContactMessageMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Nuovo messaggio',
+            from: $this->sender,
+            subject: $this->subject,
         );
     }
 
@@ -38,6 +46,7 @@ class ContactMessageMail extends Mailable
     {
         return new Content(
             view: 'email.contacts.message',
+            with: ['message' => $this->message]
         );
     }
 
